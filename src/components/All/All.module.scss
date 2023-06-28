@@ -1,0 +1,33 @@
+.wrapper {
+	width: 50%;
+	.upper {
+		display: flex;
+		gap: 20px;
+		margin-bottom: 10px;
+		input {
+			flex: 1;
+		}
+		button {
+			width: 100px;
+		}
+	}
+	.lower {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding-top: 10px;
+		.task {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			input {
+				width: 20px;
+				height: 20px;
+				cursor: pointer;
+			}
+			.cross {
+				text-decoration: line-through;
+			}
+		}
+	}
+}

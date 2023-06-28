@@ -1,0 +1,28 @@
+.wrapper {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	margin-bottom: 10px;
+	.left, .center, .right {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+}
+
+.button {
+	width: 100%;
+	height: 48px;
+	background-color: #fff;
+	border: none;
+	outline: none;
+	font-size: 20px;
+}
+
+.active {
+	width: 100px;
+	height: 2px;
+	background-color: #0D6EFD;
+	align-self: center;
+}
