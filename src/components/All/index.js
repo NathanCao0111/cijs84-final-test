@@ -1,7 +1,7 @@
 import styles from './All.module.scss'
 import { Input, Button } from 'reactstrap'
 import useTasks from '../../context/useTasks'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function All() {
 	const tasksData = useTasks()
@@ -44,17 +44,6 @@ function All() {
 			}
 		})
 	}
-
-  useEffect(() => {
-		const tasksToken = localStorage.getItem('tasksToken')
-		if (tasksToken) {
-			setTasks(JSON.parse(tasksToken))
-		}
-	}, [])
-
-	useEffect(() => {
-		localStorage.setItem('tasksToken', JSON.stringify(tasks))
-	}, [tasks])
 
 	return (
 		<div className={styles.wrapper}>
