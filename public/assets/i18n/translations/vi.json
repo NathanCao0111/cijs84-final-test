@@ -1,0 +1,10 @@
+{
+  "title": "#todo",
+  "all.label": "Tất cả",
+  "active.label": "Diễn ra",
+  "completed.label": "Hoàn thành",
+  "addDetails.placeholder": "Thêm chi tiết",
+  "add.button": "Thêm",
+  "todo.element": "{{element}}",
+  "deleteAll.button": "Xóa tất cả"
+}

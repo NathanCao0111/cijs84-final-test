@@ -1,0 +1,10 @@
+{
+  "title": "#todo",
+  "all.label": "All",
+  "active.label": "Active",
+  "completed.label": "Completed",
+  "addDetails.placeholder": "Add details",
+  "add.button": "Add",
+  "todo.element": "{{element}}",
+  "deleteAll.button": "Delete all"
+}

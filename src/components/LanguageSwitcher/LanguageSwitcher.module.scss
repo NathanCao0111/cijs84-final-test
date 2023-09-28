@@ -1,0 +1,19 @@
+.wrapper {
+	display: flex;
+	position: absolute;
+	bottom: 20px;
+	gap: 20px;
+
+	.inputContainer {
+		.label {
+			font-size: 20px;
+			color: rgb(13, 110, 253);
+			cursor: pointer;
+			opacity: 0.2;
+		}
+
+		.label.selected {
+			opacity: 1;
+		}
+	}
+}
