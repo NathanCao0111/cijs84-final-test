@@ -1,43 +1,40 @@
-import './App.css'
-import Tabs from './components/Tabs'
-import All from './components/All'
-import Active from './components/Active';
-import Completed from './components/Completed';
-import useTasks from './context/useTasks';
-import { useEffect } from 'react';
+import "./App.css";
+import Tabs from "./components/Tabs";
+import All from "./components/All";
+import Active from "./components/Active";
+import Completed from "./components/Completed";
+import useTasks from "./context/useTasks";
+import { useLocation } from "react-router-dom";
 
 function App() {
-  const tasksData = useTasks()
-  const [activeTab] = tasksData.activeTabProvider
-  const [tasks] = tasksData.tasksProvider
-	const [completedTasks] = tasksData.completedTasksProvider
-	const [activeTasks] = tasksData.activeTasksProvider
-	const [checked] = tasksData.checkedProvider
-	const [isCross] = tasksData.isCrossProvider
+  const tasksData = useTasks();
+  const [activeTab] = tasksData.activeTabProvider;
 
-  useEffect(() => {
-		localStorage.setItem('tasksToken', JSON.stringify(tasks))
-	}, [tasks])
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const withDone = searchParams.get("withDone");
 
-  useEffect(() => {
-		localStorage.setItem('activeTasksToken', JSON.stringify(activeTasks))
-	}, [activeTasks])
+  if (withDone === "1") {
+    return (
+      <div className="App">
+        <h2 className="AppTitle">#todo (All)</h2>
+        <All />
+      </div>
+    );
+  }
 
-  useEffect(() => {
-		localStorage.setItem('completedTasksToken', JSON.stringify(completedTasks))
-	}, [completedTasks])
-
-  useEffect(() => {
-		localStorage.setItem('checkedToken', JSON.stringify(checked))
-	}, [checked])
-
-  useEffect(() => {
-		localStorage.setItem('isCrossToken', JSON.stringify(isCross))
-	}, [isCross])
+  if (withDone === "0") {
+    return (
+      <div className="App">
+        <h2 className="AppTitle">#todo (Active)</h2>
+        <Active />
+      </div>
+    );
+  }
 
   return (
     <div className="App">
-      <h2 className='AppTitle'>#todo</h2>
+      <h2 className="AppTitle">#todo</h2>
       <Tabs />
       {activeTab.all && <All />}
       {activeTab.active && <Active />}
